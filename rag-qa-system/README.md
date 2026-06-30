@@ -2,6 +2,8 @@
 
 基于 **FastAPI + LangChain + Chroma + DeepSeek** 的 RAG（检索增强生成）垂直领域问答系统。
 
+个人首份vibecode可执行项目
+
 ## 技术栈
 
 | 层级       | 技术选型                                                 |
