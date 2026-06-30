@@ -1,0 +1,33 @@
+# Web 框架
+fastapi>=0.115.0,<1.0.0
+uvicorn>=0.34.0
+python-multipart>=0.0.20
+
+# AI 编排 & RAG 核心
+langchain>=0.3.0,<1.0.0
+langchain-community>=0.3.0,<1.0.0
+langchain-text-splitters>=0.3.0,<1.0.0
+
+# 向量数据库（宽松版本避免与 langchain-chroma 冲突）
+chromadb>=0.5.0,<0.6.0
+langchain-chroma>=1.0.0,<2.0.0
+
+# DeepSeek API（兼容 OpenAI SDK）
+openai>=1.50.0
+langchain-openai>=0.3.0,<1.0.0
+
+# 本地 Embedding 模型
+sentence-transformers>=3.0.0,<4.0.0
+
+# 文档解析
+pypdf>=5.0.0,<6.0.0
+markdown>=3.0.0
+
+# huggingface 集成（替代已弃用的 langchain-community 导入）
+langchain-huggingface>=1.0.0
+
+# 环境变量管理
+python-dotenv>=1.0.0
+
+# 数据校验
+pydantic>=2.0.0,<3.0.0
