@@ -14,5 +14,15 @@ async def chat(req: ChatRequest):
             for s in result["sources"]
         ]
         return ChatResponse(answer=result["answer"], sources=sources)
+    except HTTPException:
+        raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"问答处理失败: {str(e)}")
+        error_msg = str(e)
+        if "401" in error_msg or "Authentication" in error_msg or "api key" in error_msg.lower():
+            raise HTTPException(
+                status_code=401,
+                detail="API Key 无效，请检查 .env 文件中的 DEEPSEEK_API_KEY 是否正确配置",
+            )
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"问答处理失败: {error_msg}")
